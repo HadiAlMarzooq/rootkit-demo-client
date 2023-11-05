@@ -1,9 +1,11 @@
-import { Box, Flex, useDisclosure } from "@chakra-ui/react";
+import { Box, Flex, useDisclosure,  IconButton, Link } from "@chakra-ui/react";
 import useSlideStore from "./stores/useSlideStore";
 import Slide from "./components/Slide";
 import Introduction from "./components/Introduction";
 import steps from "./data/steps";
 import Conclusion from "./components/Conclusion";
+import { FaGithub } from "react-icons/fa";
+
 const App = () => {
   const { slideIndex, setSlideIndex } = useSlideStore();
   const { onClose } = useDisclosure();
@@ -45,7 +47,23 @@ const App = () => {
         )}
 
         {slideIndex === steps.length - 1 && <Conclusion />}
+{/* GitHub Icon */}
+<Box display="flex" justifyContent="center" alignItems="center" mt={6}>
+        <Link
+          href="https://github.com/HadiAlMarzooq/rootkit-demo-client"
+          isExternal
+        >
+          <IconButton
+            aria-label="GitHub Link"
+            icon={<FaGithub />}
+            size="lg"
+            colorScheme="teal"
+            variant="ghost"
+          />
+        </Link>
       </Box>
+      </Box>
+      
     </Flex>
   );
 };
