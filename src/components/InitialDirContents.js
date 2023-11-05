@@ -1,4 +1,3 @@
-// InitialDirContents.js
 import React from 'react';
 import { Box, Text, VStack, Code } from "@chakra-ui/react";
 

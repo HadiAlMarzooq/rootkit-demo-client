@@ -18,7 +18,6 @@ import InitialDirContents from "./InitialDirContents";
 const Introduction = ({ onStart }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // Automatically open the modal when the component mounts
   React.useEffect(() => {
     onOpen();
   }, [onOpen]);
